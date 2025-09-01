@@ -21,10 +21,10 @@ if (!empty($nama)) {
     $sql .= " AND a.nama LIKE '%$nama%'";
 }
 if (!empty($alamat)) {
-    $sql .= " AND a.alamat LIKE '%$alamat%'";
+    $sql .= " OR a.alamat LIKE '%$alamat%'";
 }
 
-$sql .= " ORDER BY a.id DESC LIMIT 5";
+$sql .= " ORDER BY a.id DESC";
 
 $result = $conn->query($sql);
 
